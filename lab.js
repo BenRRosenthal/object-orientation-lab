@@ -152,8 +152,16 @@ function totalPopulation(obj) {
 */
 
 //Code Here
+// const shrimpScampi = {
+//   carb: 'Angel Hair Pasta',
+//   fat: 'Olive Oil',
+//   protein: 'Shrimp',
+// }
 
-
+function ingredients(obj) {
+  const {carb, fat, protein} = obj
+  return [carb, fat, protein]
+}
 
 //////////////////////////// PROBLEM 10 ////////////////////////////
 // Do not edit the code below.
@@ -174,7 +182,10 @@ var user = {
 */
 
 //Code Here
+user.name = 'Bryan G. Smith'
+user.email = 'bryan.smith@devmountian.in'
 
+// console.log(user)
 
 //////////////////////////// PROBLEM 11 ////////////////////////////
 /*
@@ -182,8 +193,8 @@ var user = {
 */
 
 //Code Here
-
-
+delete user.age
+// console.log(user)
 //////////////////////////// PROBLEM 12 ////////////////////////////
 /*
   Create a class called 'Cat'. Make sure to call your constructor, and require these 3 parameters: name, age, color.
@@ -192,7 +203,16 @@ var user = {
 */
 
 //Code here
+class Cat {
+  constructor(name, age, color){
+    this.name = name
+    this.age = age
+    this.color = color
+  }
+}
+let cat1 = new Cat('Bill', 10, 'brown')
 
+console.log(cat1.name)
 
 
 //////////////////////////// PROBLEM 13 ////////////////////////////
@@ -204,6 +224,21 @@ var user = {
 */
 
 //Code here
+class Wizard {
+  constructor(name, age, favoriteSpell){
+    this.name = name
+    this.age = age
+    this.favoriteSpell = favoriteSpell
+  }
+
+  castSpell(){
+    console.log(`${this.name} has cast ${this.favoriteSpell}`)
+  }
+}
+
+let harry = new Wizard('Harry', 21, 'avada kadabra')
+
+harry.castSpell()
 
 //////////////////////////// PROBLEM 14 ////////////////////////////
 /*
@@ -229,7 +264,23 @@ var user = {
 */
 
 //Code Here
-
+class Phone {
+  constructor(brand, model, storage, color, price, sold){
+    this.brand = brand
+    this.model = model
+    this.storage = storage
+    this.color = color
+    this.price = price
+    this.sold = false
+  }
+  sell(){
+    this.sold = true
+    console.log(`${this.brand} ${this.model} has been sold`)
+  }
+  changePrice(newPrice) {
+    this.price = newPrice
+  }
+}
   
 /*
     Next make three new phone instances using your class.
@@ -242,7 +293,9 @@ var user = {
 */
 
 //Code Here
-
+let ncc17 = new Phone('Samsung', 'Galaxy S21 Ultra', 256, 'Phantom Black', 1199.99)
+let bsg75 = new Phone('Apple', 'Iphone 13 Mini', 128, 'Black', 899.99)
+let ncc74 = new Phone('Apple', 'Iphone 11', 128, 'red', 999.99)
 /* 
   Call the changePrice function on one of your phones, 
   don't forget to pass in a new price 
@@ -251,7 +304,9 @@ var user = {
 */ 
 
 //Code Here 
+ncc74.changePrice(799.99)
 
+console.log(ncc74.price)
 
 /*
   Now call the sell method on one of your other phone objects
@@ -260,7 +315,9 @@ var user = {
 */
 
 //Code Here 
+ncc17.sell()
 
+console.log(ncc17.sold)
 
 //////////////////////////// PROBLEM 15 ////////////////////////////
 
